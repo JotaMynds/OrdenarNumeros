@@ -10,7 +10,7 @@ public class ordenarNumeros {
 
         //Creamos el isr y el br para interactuar con los archivos
         InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(isr);
         String Linea = null;
         //Estructura try catch para la ejecución
         try {
@@ -25,10 +25,14 @@ public class ordenarNumeros {
                  numeros = new int[Dato.length];
 
                 //Convertimos a numeros los String guardados como números
-                for (int i = 0; i < Dato.length; i++) {
+                for (int i = 0; i < numeros.length; i++) {
                     numeros[i] = Integer.parseInt(Dato[i]);
                 }
                 Arrays.sort(numeros);
+                for (int i = 0; i < numeros.length; i++) {
+                    System.out.print(numeros[i] + " ");
+                }
+                System.out.println("");
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
